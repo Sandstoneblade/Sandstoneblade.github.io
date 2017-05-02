@@ -1,0 +1,505 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Make your build</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+      <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Home</span>
+          <div class="mdl-layout-spacer"></div>
+          
+         
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+          </button>
+        </div>
+      </header>
+      <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+          <img src="images/user.jpg" class="demo-avatar">
+          <div class="demo-avatar-dropdown">
+            <span>hello@example.com</span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item">hello@example.com</li>
+              <li class="mdl-menu__item">info@example.com</li>
+              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+            </ul>
+          </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+          <a class="mdl-navigation__link" href="home.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">Item builds</i>item builds</a>
+          <a class="mdl-navigation__link" href="index.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">New build</i>New build</a>
+          <a class="mdl-navigation__link" href="about.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">About</i>About</a>
+          <div class="mdl-layout-spacer"></div>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content mdl-color--grey-100">
+        
+          <h1>Build here</h1>
+          <p>Note: all item stats have positive aura affects included for ease of calculation.  
+          At this time, only SOME of the MANY items in DOTA2 are included.
+          </p>
+          <p id = "target"></p>
+          <p id = "item data">Item data will be here</p>
+          <button id = "add">Add this item to your build</button>
+          <button id = "clear">Clear build</button>
+          <p><br></p>
+          
+          <img src="" alt=""  id = "">
+
+
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/3b/Abyssal_Blade_icon.png" alt="Abyssal Blade"  id = "abladeimage">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d4/Aether_Lens_icon.png?" alt="Aether Lens"  id = "aetherlensimage">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/0/07/Aghanim%27s_Scepter_icon.png" alt="Aghanim's scepter"  id = "sceptericon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/be/Arcane_Boots_icon.png??" alt="Aghanim's scepter"  id = "sceptericon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/8d/Armlet_of_Mordiggian_%28Inactive%29_icon.png" alt="Armlet of Mordiggan"  id = "armleticon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/d3/Assault_Cuirass_icon.png" alt="Assault Cuirass"  id = "assaultcuricon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c1/Battle_Fury_icon.png" alt="Battle Fury"  id = "bfuryicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/72/Black_King_Bar_icon.png" alt="Black King Bar"  id = "bkbicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/18/Blade_Mail_icon.png" alt="Blade Mail"  id = "bmailicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f4/Bloodthorn_icon.png" alt="Bloodstone"  id = "bstoneicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f4/Bloodthorn_icon.png" alt="Bloodthorn"  id = "bthornicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/6d/Boots_of_Travel_1_icon.png" alt="Boots of Travel"  id = "btravelicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/28/Butterfly_icon.png" alt="Butterfly"  id = "bflyicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/3f/Crystalys_icon.png" alt="Crystalys"  id = "crystalicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/24/Daedalus_icon.png" alt="daedalus"  id = "daeicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/70/Dagon_5_icon.png" alt="Dagon5"  id = "dagonicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/84/Desolator_icon.png" alt="Desolator"  id = "desolatoricon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/55/Diffusal_Blade_2_icon.png" alt="Diffusal blade"  id = "dbladeicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b1/Divine_Rapier_icon.png" alt="Divine Rapier"  id = "drapiericon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/db/Dragon_Lance_icon.png" alt="Dragon Lance"  id = "dlanceicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/6b/Echo_Sabre_icon.png" alt="Echo Sabre"  id = "esabreicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/80/Eul's_Scepter_of_Divinity_icon.png" alt="Eul's Scepter of Divinity"  id = "esodivinityicon">
+          
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/1e/Eye_of_Skadi_icon.png" alt="Eye of Skadi"  id = "eoskadiicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/a2/Force_Staff_icon.png" alt="Force Staff"  id = "fstafficon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/5b/Hand_of_Midas_icon.png" alt="Hand of Midas"  id = "homidasicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/94/Guardian_Greaves_icon.png" alt="Guardian's Greaves"  id = "ggreavesicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/ce/Glimmer_Cape_icon.png" alt="Glimmer cape"  id = "gcapeicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/75/Heart_of_Tarrasque_icon.png" alt="Heart of Tarrasque"  id = "hearticon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c6/Heaven%27s_Halberd_icon.png" alt="Heaven's Halbert"  id = "hhalberticon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/97/Helm_of_the_Dominator_icon.png" alt="Helm of the Dominator"  id = "hotdomicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/ad/Hood_of_Defiance_icon.png" alt="Hood of Defiance"  id = "hodefiicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/13/Hurricane_Pike_icon.png" alt="Hurricane Pike"  id = "hpikeicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Linken%27s_Sphere_icon.png" alt="Linken's Sphere"  id = "lsphereicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/c/c8/Lotus_Orb_icon.png" alt="Lotus Orb"  id = "lorbicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/8/84/Manta_Style_icon.png" alt="Manta Style"  id = "mstyleicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/76/Mask_of_Madness_icon.png" alt="Mask of Madness"  id = "mmadicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/f/f7/Mekansm_icon.png" alt="Mekansm"  id = "mekicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/9d/Mjollnir_icon.png" alt="Mjollnir"  id = "mjolicon">
+
+          <!-- Actually, the monkey king bar is Ruyi Jingu Bang, from Journey to the West.  I wondered when Sun Wukong would show up when I saw this item.  :)-->
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b0/Monkey_King_Bar_icon.png" alt="Monkey King Bar"  id = "mkbicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/21/Moon_Shard_icon.png" alt="Moon Shard"  id = "mshardicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/25/Necronomicon_3_icon.png" alt="Necronomicron"  id = "necroicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/1/13/Octarine_Core_icon.png" alt="Octarine Core"  id = "ocoreicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/a/ad/Orchid_Malevolence_icon.png" alt="Orchid Malevolence"  id = "omaleicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/7/76/Pipe_of_Insight_icon.png" alt="Pipe of Insight"  id = "poinsighticon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/df/Radiance_(Active)_icon.png" alt="Radiance"  id = "radicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/e/e2/Refresher_Orb_icon.png" alt="Refresher Orb"  id = "rorbicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/6/66/Rod_of_Atos_icon.png" alt="Rod of Atos"  id = "roatosicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b4/Sange_and_Yasha_icon.png" alt="Sange and Yasha"  id = "sayicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/d/dd/Satanic_icon.png" alt="Satanic"  id = "satanicicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/5/54/Scythe_of_Vyse_icon.png" alt="Scythe of Vyse"  id = "svyseicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/b/b6/Shiva's_Guard_icon.png" alt="Shiva's Guard"  id = "sguardicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/9/91/Silver_Edge_icon.png" alt="Silver Edge"  id = "sedgeicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/3/36/Solar_Crest_icon.png" alt="Solar Crest"  id = "scresticon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/23/Tranquil_Boots_%28Active%29_icon.png" alt="Tranquil boots"  id = "tbootsicon">
+          <img src="https://hydra-media.cursecdn.com/dota2.gamepedia.com/2/28/Vladmir%27s_Offering_icon.png" alt="Vladmir's Offering"  id = "vofferingicon">
+          <p id = "Item list"></p>
+      </main>
+    </div>
+      
+      
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <script>
+          document.getElementById("add").addEventListener("click", adder);
+          document.getElementsById("clear").addEventListener("click", function(){
+            db.Build.update(0, {str: 0, agi: 0, int: 0, mp: 0, hp: 0, hpreg: 0, mpreg: 0, as: 0, dam:0, armor: 0, evade: 0, effects: ""})
+            db.items.update({item1: "None"}).catch(function(error) { alert (error);});;
+            db.items.update({item2: "None"}).catch(function(error) { alert (error);});
+            db.items.update({item3: "None"}).catch(function(error) { alert (error);});
+            db.items.update({item4: "None"}).catch(function(error) { alert (error);});
+            db.items.update({item5: "None"}).catch(function(error) { alert (error);});
+            db.items.update({item6: "None"}).catch(function(error) { alert (error);});
+            document.getElementById("Item list").innerHTML = "";
+            alert("Cleared the stored build.")
+            
+          })
+          var hitthis = "Abyssal Blade";
+          document.getElementById("abladeimage").addEventListener("click", temp(hitthis));
+          hitthis = "Aether Lens";
+          document.getElementById("aetherlensimage").addEventListener("click", temp(hitthis));
+          hitthis = "Aghanim's scepter";
+          document.getElementById("sceptericon").addEventListener("click", temp(hitthis));
+          hitthis = "Armlet of Mordiggan";
+          document.getElementById("armleticon").addEventListener("click", temp(hitthis));
+          hitthis = "Assault Cuirass";
+          document.getElementById("assaultcuricon").addEventListener("click", temp(hitthis));
+          hitthis = "Battle Fury";
+          document.getElementById("bfuryicon").addEventListener("click", temp(hitthis));
+          hitthis = "Black King Bar";
+          document.getElementById("bkbicon").addEventListener("click", temp(hitthis));
+          hitthis= "Blade Mail";
+          document.getElementById("bmailicon").addEventListener("click", temp(hitthis));
+          hitthis = "Bloodstone";
+          document.getElementById("bstoneicon").addEventListener("click", temp(hitthis));
+          hitthis = "Bloodthorn";
+          document.getElementById("bthornicon").addEventListener("click", temp(hitthis));
+          hitthis = "Boots of Travel";
+          document.getElementById("btravelicon").addEventListener("click", temp(hitthis));
+          hitthis = "Butterfly";
+          document.getElementById("bflyicon").addEventListener("click", temp(hitthis));
+          hitthis = "Crystalys";
+          document.getElementById("crystalicon").addEventListener("click", temp(hitthis));
+          hitthis = "Daedalus";
+          document.getElementById("daeicon").addEventListener("click", temp(hitthis));
+          hitthis = "Dagon";
+          document.getElementById("dagonicon").addEventListener("click", temp(hitthis));
+          hitthis = "Desolator";
+          document.getElementById("desolatoricon").addEventListener("click", temp(hitthis));
+          hitthis = "Diffusal blade";
+          document.getElementById("dbladeicon").addEventListener("click", temp(hitthis));
+          hitthis = "Divine Rapier";
+          document.getElementById("drapiericon").addEventListener("click", temp(hitthis));
+          hitthis = "Dragon Lance";
+          document.getElementById("dlanceicon").addEventListener("click", temp(hitthis));
+          hitthis = "Echo Sabre";
+          document.getElementById("esabreicon").addEventListener("click", temp(hitthis));
+          hitthis = "Eul's Scepter of Divinity";
+          document.getElementById("esodivinityicon").addEventListener("click", temp(hitthis));
+          hitthis = "Eye of Skadi";
+          document.getElementById("eoskadiicon").addEventListener("click", temp(hitthis));
+          hitthis = "Force Staff";
+          document.getElementById("fstafficon").addEventListener("click", temp(hitthis));
+
+          hitthis = "Hand of Midas";
+          document.getElementById("homidasicon").addEventListener("click", temp(hitthis));
+          hitthis = "Guardian's Greaves";
+          document.getElementById("ggreavesicon").addEventListener("click", temp(hitthis));
+          hitthis = "Heart of Tarrasque";
+          document.getElementById("hhearticon").addEventListener("click", temp(hitthis));
+          hitthis = "Heaven's Halbert";
+          document.getElementById("hhalberticon").addEventListener("click", temp(hitthis));
+          hitthis = "Helm of the Dominator";
+          document.getElementById("hotdomicon").addEventListener("click", temp(hitthis));
+          hitthis = "Hood of Defiance";
+          document.getElementById("hodefiicon").addEventListener("click", temp(hitthis));
+          hitthis = "Hurricane Pike";
+          document.getElementById("hpikeicon").addEventListener("click", temp(hitthis));
+          hitthis = "Linken's Sphere";
+          document.getElementById("lsphereicon").addEventListener("click", temp(hitthis));
+          hitthis = "Lotus Orb";
+          document.getElementById("lorbicon").addEventListener("click", temp(hitthis));
+          hitthis = "Manta Style";
+          document.getElementById("mstyleicon").addEventListener("click", temp(hitthis));
+          hitthis = "Mask of Madness";
+          document.getElementById("mmadicion").addEventListener("click", temp(hitthis));
+          hitthis = "Mekansm";
+          document.getElementById("mekicon").addEventListener("click", temp(hitthis));
+          hitthis = "Mjollnir";
+          document.getElementById("mjolicon").addEventListener("click", temp(hitthis));
+          hitthis = "Moon Shard";
+          document.getElementById("mshardicon").addEventListener("click", temp(hitthis));
+          hitthis = "Necronomicron";
+          document.getElementById("necroicon").addEventListener("click", temp(hitthis));
+          hitthis = "Octarine Core";
+          document.getElementById("ocoreicon").addEventListener("click", temp(hitthis));
+          hitthis = "Orchid Malevolence";
+          document.getElementById("omaleicon").addEventListener("click", temp(hitthis));
+          hitthis = "Pipe of Insight";
+          document.getElementById("poinsighticon").addEventListener("click", temp(hitthis));
+          hitthis = "Radiance";
+          document.getElementById("radicon").addEventListener("click", temp(hitthis));
+          hitthis = "Refresher Orb";
+          document.getElementById("rorbicon").addEventListener("click", temp(hitthis));
+          hitthis = "Rod of Atos";
+          document.getElementById("roatosicon").addEventListener("click", temp(hitthis));
+          hitthis = "Sange and Yasha";
+          document.getElementById("sayicon").addEventListener("click", temp(hitthis));
+          hitthis = "Satanic";
+          document.getElementById("satanicicon").addEventListener("click", temp(hitthis));
+          hitthis = "Scythe of Vyse";
+          document.getElementById("svyseicon").addEventListener("click", temp(hitthis));
+          hitthis = "Shiva's Guard";
+          document.getElementById("sguardicon").addEventListener("click", temp(hitthis));
+          
+          hitthis = "Silver Edge";
+          document.getElementById("scresticon").addEventListener("click", temp(hitthis));
+          hitthis = "Tranquil Boots";
+          document.getElementById("tbootsicon").addEventListener("click", temp(hitthis));
+          hitthis = "Tranquil Boots";
+          document.getElementById("tbootsicon").addEventListener("click", temp(hitthis));
+          hitthis = "Vladmir's Offering";
+          document.getElementById("vofferingicon").addEventListener("click", temp(hitthis));
+    
+          var strtohp = 20;
+          var strtohpreg = .03;
+          var agitoas = 1;
+          var agitoarmor = 0.143;
+          var inttomp = 12;
+          var inttompreg = .04;
+          var inttospelldamage = 0.0667;
+          //
+          // Define your database
+          //
+          var db = new Dexie("ItemBuild");
+          db.version(1).stores({
+            items: 'item1, item2, item3, item4, item5, item6'
+            build: 'str, agi, int, hp, mp, as, dam, armor, evade, hpreg, mpreg, effects'
+          });
+          // Seperate db for the items, which isn't related to a build.
+          db.version(2).stores({
+            item: "Name, str, agi, int, hp, mp, as, dam, armor, evade, hpreg, mpreg, effects",
+          });
+          
+          db.items.update({item1: "None"}).catch(function(error) { alert (error);});;
+          db.items.update({item2: "None"}).catch(function(error) { alert (error);});
+          db.items.update({item3: "None"}).catch(function(error) { alert (error);});
+          db.items.update({item4: "None"}).catch(function(error) { alert (error);});
+          db.items.update({item5: "None"}).catch(function(error) { alert (error);});
+          db.items.update({item6: "None"}).catch(function(error) { alert (error);});
+          
+          
+          
+          function temp (hitthi)
+          {
+            if (db.items.get({Name: hitthi}) == null)
+            {
+              console.log("Error");
+              if (hitthi != null)
+              {
+              document.getElementById("target").innerHTML = hitthi
+              }
+              return;
+            }
+            var build = "str: " + db.item.get({Name: hitthi}).str;
+            build = build + " " + "agi: " + db.item({Name: hitthi}).agi;
+            build = build + " " + "int: " + db.item({Name: hitthi}).int;
+            build = build + " " + "hp: " + db.item({Name: hitthi}).hp;
+            build = build + " " + "mp: " + db.item({Name: hitthi}).mp;
+            build = build + " " + "as: " + db.item({Name: hitthi}).as;
+            build = build + " " + "dam: " + db.item({Name: hitthi}).dam;
+            build = build + " " + "armor: " + db.item({Name: hitthi}).armor;
+            build = build + " " + "evade: " + db.item({Name: hitthi}).evade;
+            build = build + " " + "hpreg: " + db.item({Name: hitthi}).hpreg;
+            build = build + " " + "mpreg: " + db.item({Name: hitthi}).mpreg;
+            build = build + " " + "effects: " + db.item({Name: hitthi}).effects;
+            document.getElementById("target").innerHTML = hitthi;
+            document.getElementById("item data").innerHTML = build; 
+          }
+          
+          // Gets the item selected from the target, adds it to build,
+          //both in the database (item values added) and to the list.
+          // but: if 6 items present in said list, will not act, user
+          // has to clear the list first
+          function adder(){
+            
+            var name = document.getElementById("target").innerHTML;
+            if (name == "")
+            {
+              alert("Select something first please");
+              return;
+            }
+            var res = db.item.get({Name: name}).catch(function(error) { alert (error);});
+            if (db.items.get(0).item6 == "None")
+            {
+            if (res != null)
+            {
+              
+              var buildresult = db.Build.get({id: 0}).catch(function(error) { alert (error);});
+              if (buildresult != null)
+              {
+                if (db.items.get(0).item1 == "None")
+                {
+                  db.items.update(0, {item1: name}).catch(function(error) { alert (error);});
+                }
+                else if (db.items.get(0).item2 == "None")
+                {
+                  db.items.update(0, {item2: name}).catch(function(error) { alert (error);});
+                }
+                else if (db.items.get(0).item3 == "None")
+                {
+                  db.items.update(0, {item3: name}).catch(function(error) { alert (error);});
+                }
+                else if (db.items.get(0).item4 == "None")
+                {
+                  db.items.update(0, {item4: name}).catch(function(error) { alert (error);});
+                }
+                else if (db.items.get(0).item5 == "None")
+                {
+                  db.items.update(0, {item5: name}).catch(function(error) { alert (error);});
+                }
+                else if (db.items.get(0).item6 == "None")
+                {
+                  db.items.update(0, {item6: name}).catch(function(error) { alert (error);});
+                  alert("Build is now full.  Check your results, or clear the build!");
+                }
+                else
+                {
+                  alert("Something's wrong here, you shouldn't be accessing this.");
+                }
+                db.Build.update(0, {str: (buildresult.str + res.str)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {agi: (buildresult.agi + res.agi)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {int: (buildresult.int + res.int)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {hp: (buildresult.hp + res.hp)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {mp: (buildresult.mp + res.mp)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {mpreg: (buildresult.mpreg + res.mpreg)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {hpreg: (buildresult.hpreg + res.hpreg)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {as: (buildresult.as + res.as)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {dam: (buildresult.dam + res.dam)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {armor: (buildresult.armor + res.armor)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {evade: (buildresult.evade + res.evade)}).catch(function(error) { alert (error);});
+                db.Build.update(0, {effects: (buildresult.effects + " " +res.effects)}).catch(function(error) { alert (error);});
+                var hold = document.getElementById("Item list").innerHTML;
+                hold = hold + ", " + name;
+                document.getElementById("Item list").innerHTML = hold;
+              }
+              else
+              {
+                alert ("Buildresult null - uh-oh");
+              }
+            
+            }
+            else
+            {
+              alert ("Error, " + name + "not found in database!");
+            }
+            }//End of the 'check if 6 items in list'
+          }
+          
+          
+          
+          //Template to build
+          
+          //db.item.put({Name = '', str = 0, agi = 0, int = 0, hp = 0, mp = 0, as = 0, dam = 0, armor = 0, evade = 0, hpreg = 0, mpreg=0, effect = 'None'});
+          
+          db.item.put({Name : 'Aether Lens', str : 0, agi : 0, int : 0, hp : 0, mp : 250, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 8, mpreg:0, effect : '+220 Cast Range, +5% Spell Damage'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Aghanim\'s Scepter', str : 10, agi : 10, int : 10, hp : 200, mp : 150, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Ultimate upgrage'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Arcane Boots', str : 0, agi : 0, int : 0, hp : 0, mp : 250, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Movespeed +50'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Armlet of Mordiggian', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 25, dam : 9, armor : 5, evade : 0, hpreg : 7, mpreg:0, effect : 'Active: unholy strength'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Assault Cuirass', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 55, dam : 0, armor : 15, evade : 0, hpreg : 0, mpreg:0, effect : 'Assault aura - allies: +5 armor, +25 as, -5 armor to enemies'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Battle Fury', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 55, armor : 0, evade : 0, hpreg : 6, mpreg:150, effect : '40% damage cleave, melee only'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Black King Bar', str : 10, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 24, armor : 0 ,evade : 0, hpreg : 0, mpreg:0, effect : 'Spell immunune, time variable'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Blade Mail', str : 0, agi : 0, int : 10, hp : 0, mp : 0, as : 0, dam : 22, armor : 6, evade : 0, hpreg : 0, mpreg:0, effect : 'Damage return'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Bloodstone', str : 0, agi : 0, int : 0, hp : 500, mp : 400, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:200, effect : 'Pocket suicide, bloodpact (every charge : -3 sec respawn, +1 mp regen)'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Bloodthorn', str : 0, agi : 0, int : 25, hp : 0, mp : 0, as : 30, dam : 60, armor : 0, evade : 0, hpreg : 0, mpreg:150, effect : 'Critical (1.4), thornstrike (all attacks on target: crit, true strike, target silenced)'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Boots of Travel', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '+100 move speed, teleportation (2 levels)'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Butterfly', str : 0, agi : 35, int : 0, hp : 0, mp : 0, as : 30, dam : 30, armor : 0, evade : 35, hpreg : 0, mpreg:0, effect : 'Active: flutter, +35% movespeed'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Crystalys', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 30, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '1.75 damage crit'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Daedalus', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 76, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '2.2 damage crit'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Dagon 5', str : 3, agi : 3, int : 28, hp : 0, mp : 0, as : 0, dam : 9, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Energy burst, 800 damage, requires 5 recepies'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Desolator', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 50, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '-7 armor on hit'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Diffusal Blade', str : 0, agi : 35, int : 15, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Active: purge, passive, manabreak'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Divine Rapier', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 330, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Drop on death'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Dragon Lance', str : 12, agi : 12, int : 0, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '+140 attack range, ranged only'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Echo Sabre', str : 10, agi : 0, int : 10, hp : 0, mp : 0, as : 10, dam : 15, armor : 0, evade : 0, hpreg : 0, mpreg:75, effect : 'Doublestrike'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Ethereal Blade', str : 10, agi : 40, int : 10, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Etheral blast'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Eul\'s Scepter of Divinity', str : 0, agi : 0, int : 10, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:150, effect : '+40 movespeed, active: cyclone'}).catch(function(error) { alert (error);});
+          
+          
+          db.item.put({Name : 'Eye of Skadi', str : 25, agi : 25, int : 25, hp : 250, mp : 250, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'cold attack, not a U.A.'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Force Staff', str : 0, agi : 0, int : 10, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 4, mpreg:0, effect : 'Force push'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Hand of Midas', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 30, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Transmute'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Guardian Greaves', str : 5, agi : 5, int : 5, hp : 0, mp : 250, as : 0, dam : 0, armor : 5, evade : 0, hpreg : 0, mpreg:0, effect : '50 movespeed, active: mend, passive: guardian aura'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Glimmer Cape', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 20, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '+15% MR, active: fade'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Heart of Tarrasque', str : 45, agi : 0, int : 0, hp : 250, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Health regen, 2% per sec, hero combat disables for variable time'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Heaven\'s Halbert', str : 20, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 25, armor : 0, evade : 25, hpreg : 0, mpreg:0, effect : 'Disarm - disables attacking, lesser maim passive'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Helm of the Dominator', str : 2, agi : 2, int : 2, hp : 0, mp : 0, as : 20, dam : 0, armor : 0, evade : 0, hpreg : 8, mpreg:0, effect : '+10 as aura, dominate'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Hood of Defiance', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 9, mpreg:0, effect : '+25% mr'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Hurricane Pike', str : 20, agi : 15, int : 10, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 4, mpreg:0, effect : '+140 attack range, ranged only, force push'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Linken\'s Sphere', str : 15, agi : 15, int : 15, hp : 0, mp : 0, as : 0, dam : 15, armor : 0, evade : 0, hpreg : 6, mpreg:150, effect : 'spellblock, 1 per 13 seconds'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Lotus Orb', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 10, armor : 10, evade : 0, hpreg : 5, mpreg:125, effect : 'Echo shell - take spell damage, bounce it back to caster'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Manta Style', str : 10, agi : 26, int : 10, hp : 0, mp : 0, as : 15, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '+10 movespeed, mirror image'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Mask of Madness', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 15, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Lifesteal (15%), berserk (+120 as, +1%7 movespeed, -5 armor, silenced)'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Mekansm', str : 5, agi : 5, int : 5, hp : 0, mp : 0, as : 0, dam : 0, armor : 5, evade : 0, hpreg : 4, mpreg:0, effect : 'Active: mend, passive, +4 hpregen aura'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Mjollnir', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 80, dam : 24, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Chain lightning, static charge'}).catch(function(error) { alert (error);});
+          
+          db.item.put({Name : 'Monkey King Bar', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 66, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Mini-bash, true strike'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Moon Shard', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 120, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Consume for +60 as, uses item'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Necronomicon', str : 16, agi : 0, int : 24, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Summon 2 demons, true sight, mana burn, needs 3 recepies'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Octarine Core', str : 0, agi : 0, int : 25, hp : 450, mp : 400, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Ability cooldown: -25%, spell lifesteal: 25% on heroes, 5% on creeps'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Orchid Malevolence', str : 0, agi : 0, int : 25, hp : 0, mp : 0, as : 30, dam : 30, armor : 0, evade : 0, hpreg : 0, mpreg:150, effect : 'Active: soul burn (silence, +30% damage)'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Pipe of Insight', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 9, mpreg:0, effect : '+30% spell resistance'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Radiance', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 65, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '+60 damage per second as aura'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Refresher Orb', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 20, armor : 0, evade : 0, hpreg : 12, mpreg:250, effect : 'Refresh- remove all ability cooldowns'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Rod of Atos', str : 0, agi : 0, int : 30, hp : 350, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Cripple'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Sange and Yasha', str : 16, agi : 16, int : 16, hp : 0, mp : 0, as : 16, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '+16% movespeed'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Satanic', str : 25, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 50, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '+25% lifesteal, active: 175% lifesteal, 3.5 sec'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Scythe of Vyse / aka Sheepstick', str : 10, agi : 10, int : 35, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:150, effect : 'Turn target into sheep/pig/critter'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Shiva\'s Guard', str : 0, agi : 0, int : 30, hp : 0, mp : 0, as : 0, dam : 0, armor : 15, evade : 0, hpreg : 0, mpreg:0, effect : '-45 foe as, Active: artic blast'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Silver Edge', str : 15, agi : 15, int : 15, hp : 0, mp : 0, as : 30, dam : 30, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : 'Fade (invisible), break first target attacked when invisble, +175 damage for that one attack'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Solar Crest', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 0, armor : 12, evade : 25, hpreg : 0, mpreg:75, effect : 'Active: Shine: loose buffs and: 25% evade +10 armor on ally, or 25% miss and -10 armor on foe'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Tranquil Boots', str : 0, agi : 0, int : 0, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 14, mpreg:0, effect : '90 movespeed, when attacked or attacking: down to 60 movespeed, removes hp regen for 13 seconds'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Vladmir\'s Offering', str : 2, agi : 2, int : 2, hp : 0, mp : 0, as : 0, dam : 0, armor : 0, evade : 0, hpreg : 0, mpreg:0, effect : '+lifesteal aura, 15% melee, 10% ranged'}).catch(function(error) { alert (error);});
+          db.item.put({Name : 'Abyssal Blade', str : 10, agi : 0, int : 0, hp : 250, mp : 0, as : 0, dam : 10, armor : 0, evade : 0, hpreg : 15, mpreg:0, effect : 'Passive: bash and damage block, active: bash'}).catch(function(error) { alert (error);});
+          
+    </script>
+  </body>
+</html>
